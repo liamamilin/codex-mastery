@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="驾驭 Codex：从基础使用到复杂任务掌控。交互阅读网站的视觉方向样稿。" />
+  <meta name="theme-color" content="#0b101c" />
+  <title>Codex Mastery Lab · 视觉方向样稿</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b101c;
+      --bg-alt: #111a29;
+      --panel: #131e2d;
+      --panel-soft: #162233;
+      --text: #f1f4fb;
+      --muted: #a5b5c8;
+      --faint: #72839a;
+      --border: rgba(168,194,215,.16);
+      --coral: #ff8968;
+      --cyan: #8ed4e3;
+      --lime: #c1dcc4;
+      --surface-shadow: 0 32px 90px rgba(0,0,0,.32);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; background: var(--bg); color:var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height:1.6; font-size:16px; }
+    body::before { content:""; pointer-events:none; position:absolute; top:0;left:0;right:0;height:1020px; background: radial-gradient(ellipse 50% 35% at 82% 31%,rgba(40,96,116,.28),transparent 75%), radial-gradient(ellipse 35% 30% at 7% 5%,rgba(130,70,62,.15),transparent 78%); z-index:0; }
+    a {color:inherit;text-decoration:none;}
+    button {font:inherit;}
+    button:focus-visible,a:focus-visible {outline:3px solid var(--cyan);outline-offset:4px;}
+    .site {position:relative;z-index:1;overflow:hidden;}
+    .container {max-width:1220px;margin:0 auto;padding:0 34px;}
+    .nav {height:88px;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid rgba(255,255,255,.08);}
+    .brand {display:flex;align-items:center;gap:13px;white-space:nowrap;}
+    .mark {height:39px;width:39px;display:grid;place-items:center;border:1px solid rgba(255,137,104,.4);border-radius:12px;background:linear-gradient(135deg,rgba(255,137,104,.18),rgba(142,212,227,.02));box-shadow:inset 0 0 15px rgba(255,137,104,.06);}
+    .mark svg {width:27px;height:27px;}
+    .brand-name {font-weight:800;letter-spacing:.04em;font-size:18px;line-height:1.15;}
+    .brand-sub {font-size:10px;letter-spacing:.2em;color:var(--faint);font-weight:800;}
+    .nav-links {display:flex;align-items:center;gap:36px;font-size:13px;font-weight:650;color:#b7c4d2;}
+    .nav-links a:hover {color:#fff;}
+    .nav-right {display:flex;align-items:center;gap:12px;}
+    .preview-pill {font-size:11px;letter-spacing:.05em;border:1px solid var(--border);border-radius:99px;padding:7px 12px;color:var(--muted);background:rgba(255,255,255,.026);white-space:nowrap;}
+    .top-button {font-size:13px;padding:12px 18px;border-radius:11px;background:var(--coral);color:#101522;font-weight:800;box-shadow:0 8px 35px rgba(255,137,104,.22);}
+    .top-button:hover,.btn-primary:hover {background:#ffa183;transform:translateY(-1px);}
+    .hero {padding-top:105px;padding-bottom:104px;display:grid;grid-template-columns:1.04fr .96fr;gap:64px;align-items:center;}
+    .eyebrow {display:inline-flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.18em;color:var(--cyan);font-weight:850;text-transform:uppercase;}
+    .eyebrow::before {content:"";height:7px;width:7px;background:var(--coral);border-radius:50%;box-shadow:0 0 12px rgba(255,137,104,.5);}
+    .hero h1 {font-size:clamp(48px,5.05vw,76px);line-height:1.2;letter-spacing:-.055em;margin:32px 0 28px;font-weight:850;}
+    .hero h1 span {display:block;background:linear-gradient(100deg,#ffb296 10%,#ff795c 55%,#d6a5ae 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .hero p {color:var(--muted);max-width:495px;font-size:16px;line-height:2.05;margin:0 0 34px;}
+    .buttons {display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+    .btn-primary,.btn-secondary {display:inline-flex;align-items:center;gap:11px;padding:15px 23px;font-weight:800;font-size:14px;border-radius:12px;transition:transform .2s ease,background .2s;}
+    .btn-primary {background:var(--coral);color:#1b1a1e;box-shadow:0 15px 48px rgba(255,137,104,.19);}
+    .btn-secondary {border:1px solid rgba(193,213,229,.27);color:#ebf2fc;background:rgba(255,255,255,.045);}
+    .btn-secondary:hover {background:rgba(255,255,255,.09);}
+    .hero-meta {display:flex;gap:27px;align-items:center;margin-top:56px;flex-wrap:wrap;}
+    .metric {display:flex;align-items:baseline;gap:8px;}
+    .metric b {font-size:28px;line-height:1;color:#e8f0f8;letter-spacing:-.04em;}
+    .metric span {font-size:11px;color:var(--faint);}
+    .hero-art {margin:0;position:relative;isolation:isolate;min-height:530px;border:1px solid rgba(169,204,225,.14);border-radius:26px;background:radial-gradient(circle at 54% 36%,rgba(55,107,124,.18),transparent 48%),linear-gradient(145deg,rgba(21,36,53,.85),rgba(14,23,36,.94));box-shadow:var(--surface-shadow);overflow:hidden;}
+    .hero-art::before {position:absolute;inset:0;content:"";background-image:linear-gradient(rgba(140,182,206,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(140,182,206,.045) 1px,transparent 1px);background-size:33px 33px;mask-image:linear-gradient(to bottom,black,transparent 90%);}
+    .art-header {height:58px;display:flex;justify-content:space-between;align-items:center;padding:0 25px;border-bottom:1px solid rgba(169,204,225,.11);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.1em;}
+    .art-dots {display:flex;gap:7px;}
+    .art-dots i {height:6px;width:6px;border-radius:50%;background:#8d9dad;opacity:.65;}
+    .art-dots i:first-child {background:var(--coral);opacity:1;}
+    .orbit {height:365px;position:relative;margin:0 auto;max-width:460px;display:grid;place-items:center;}
+    .orbit svg {height:100%;width:100%;}
+    .orbit-label {position:absolute;font-size:12px;font-weight:800;letter-spacing:.06em;color:#f3f7fb;background:#192a39;padding:7px 11px;border:1px solid rgba(164,205,225,.2);border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.14);}
+    .orbit-label.a {top:72px;left:39px;}
+    .orbit-label.b {top:70px;right:42px;color:#a9e0e5;}
+    .orbit-label.c {bottom:67px;left:43px;color:#ffc3ac;}
+    .orbit-label.d {bottom:70px;right:43px;}
+    .orbit-center {position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:127px;height:127px;background:#0e1926;border:1px solid rgba(211,231,244,.2);box-shadow:0 0 0 17px rgba(123,201,220,.035),inset 0 0 42px rgba(52,112,133,.13);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;}
+    .orbit-center strong {font-size:20px;letter-spacing:.13em;}
+    .orbit-center small {font-size:10px;letter-spacing:.17em;color:var(--muted);}
+    .art-bottom {margin:0 23px 22px;padding:19px 20px;border:1px solid rgba(136,173,196,.15);border-radius:14px;background:rgba(5,11,20,.45);display:flex;align-items:center;justify-content:space-between;gap:13px;}
+    .art-bottom b {font-size:12px;display:block;margin-bottom:3px;}
+    .art-bottom p {font-size:11px;margin:0;color:var(--muted);}
+    .art-status {display:flex;align-items:center;gap:7px;white-space:nowrap;font-size:10px;color:#c2d6d0;}
+    .art-status::before {content:"";height:7px;width:7px;background:#91d5ad;border-radius:50%;box-shadow:0 0 8px rgba(145,213,173,.6);}
+    .section-top {border-top:1px solid rgba(181,205,225,.09);padding-top:40px;}
+    .section-kicker {color:var(--coral);font-size:12px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;}
+    .section-heading {font-size:clamp(30px,3.2vw,45px);letter-spacing:-.04em;line-height:1.33;margin:13px 0 12px;}
+    .section-sub {color:var(--muted);font-size:15px;line-height:1.9;margin:0;max-width:650px;}
+    .journey {padding-bottom:96px;}
+    .course-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px;}
+    .course-card {min-height:245px;position:relative;border:1px solid var(--border);border-radius:17px;padding:27px 23px;background:linear-gradient(145deg,rgba(28,43,61,.8),rgba(17,28,43,.78));overflow:hidden;transition:transform .2s ease,border-color .2s ease;}
+    .course-card:hover {transform:translateY(-3px);border-color:rgba(255,137,104,.45);}
+    .course-card::before {content:"";position:absolute;right:-30px;top:-35px;width:140px;height:140px;border:1px solid rgba(150,181,210,.09);border-radius:50%;box-shadow:0 0 0 22px rgba(156,196,218,.018),0 0 0 44px rgba(156,196,218,.012);}
+    .card-num {font-size:12px;color:var(--cyan);font-weight:850;letter-spacing:.12em;}
+    .course-card h3 {font-size:20px;margin:58px 0 9px;line-height:1.4;letter-spacing:-.03em;}
+    .course-card p {margin:0;font-size:12px;line-height:1.85;color:var(--muted);}
+    .course-card.coral .card-num {color:var(--coral);}
+    .course-card.lime .card-num {color:var(--lime);}
+    .course-card.pink .card-num {color:#eeb1b1;}
+    .journey-line {padding:23px 0;margin-top:20px;border-top:1px solid rgba(255,255,255,.07);color:var(--faint);font-size:12px;}
+    .journey-line b {color:var(--muted);font-weight:700;}
+    .lab-wrap {background:linear-gradient(160deg,#101a28,#0b101c);border-top:1px solid rgba(161,184,209,.09);border-bottom:1px solid rgba(161,184,209,.09);}
+    .lab {padding-top:88px;padding-bottom:98px;display:grid;grid-template-columns:.85fr 1.15fr;gap:73px;align-items:start;}
+    .lab-copy h2 {font-size:clamp(33px,3.2vw,44px);letter-spacing:-.04em;line-height:1.4;margin:20px 0;}
+    .lab-copy p {font-size:14px;color:var(--muted);line-height:2.1;max-width:425px;}
+    .lab-points {margin-top:33px;display:flex;flex-direction:column;gap:13px;font-size:12px;color:#b4c6d3;}
+    .lab-points span {display:flex;align-items:center;gap:10px;}
+    .lab-points svg {height:17px;width:17px;color:var(--cyan);}
+    .scenario {border:1px solid rgba(176,208,230,.21);border-radius:23px;background:linear-gradient(148deg,#18273a,#121d2d);box-shadow:var(--surface-shadow);padding:28px;}
+    .scenario-head {display:flex;align-items:center;justify-content:space-between;padding-bottom:21px;border-bottom:1px solid rgba(201,222,233,.1);gap:10px;}
+    .scenario-head b {font-size:13px;color:#eaf1f8;}
+    .scenario-tag {color:#ffd4be;background:rgba(255,137,104,.1);border:1px solid rgba(255,137,104,.23);padding:6px 10px;font-size:10px;font-weight:800;border-radius:99px;}
+    .situation {padding:23px 0 15px;}
+    .situation h3 {font-size:18px;line-height:1.65;margin:0 0 12px;}
+    .situation p {font-size:12px;color:var(--muted);margin:0;line-height:1.95;}
+    .options {display:grid;gap:10px;}
+    .option {display:flex;align-items:center;gap:13px;background:#101c2b;border:1px solid rgba(168,198,215,.17);border-radius:11px;color:#e7eff8;padding:14px 16px;text-align:left;cursor:pointer;transition:background .2s,border-color .2s;}
+    .option span {display:grid;place-items:center;min-width:26px;height:26px;border-radius:6px;background:rgba(177,206,225,.095);font-size:11px;color:var(--cyan);font-weight:850;}
+    .option strong {font-size:12px;font-weight:660;line-height:1.8;}
+    .option:hover {border-color:rgba(255,137,104,.6);background:#18283a;}
+    .option[aria-pressed="true"] {border-color:var(--coral);background:#263040;}
+    .feedback {margin-top:18px;padding:16px 18px;background:#0e1a29;border-left:3px solid var(--cyan);border-radius:9px;min-height:91px;}
+    .feedback.positive {border-left-color:#b8dcca;}
+    .feedback.warning {border-left-color:var(--coral);}
+    .feedback strong {font-size:12px;display:block;margin-bottom:5px;}
+    .feedback p {font-size:12px;color:var(--muted);margin:0;line-height:1.8;}
+    .scenario-footer {margin-top:16px;display:flex;justify-content:space-between;gap:12px;align-items:center;}
+    .scenario-footer small {font-size:10px;color:var(--faint);}
+    .reset {border:0;background:none;color:var(--cyan);font-size:11px;cursor:pointer;padding:8px;}
+    .closing {padding-top:78px;padding-bottom:90px;display:flex;align-items:end;justify-content:space-between;gap:30px;}
+    .closing h2 {font-size:clamp(30px,3vw,43px);line-height:1.37;letter-spacing:-.04em;margin:14px 0 12px;}
+    .closing p {color:var(--muted);font-size:13px;margin:0;line-height:1.9;max-width:690px;}
+    footer {padding-top:27px;padding-bottom:35px;border-top:1px solid rgba(181,205,225,.11);display:flex;align-items:center;justify-content:space-between;gap:15px;}
+    footer span {font-size:11px;color:var(--faint);}
+    @media(max-width:1100px){.hero{gap:26px;}.hero h1{font-size:53px}.course-card h3{font-size:18px}.course-card{padding:22px}.lab{gap:30px}}
+    @media(max-width:900px){.nav-links{display:none}.hero{grid-template-columns:1fr;padding-top:70px;gap:45px}.hero-art{max-width:610px;width:100%;justify-self:center}.course-grid{grid-template-columns:repeat(2,1fr)}.lab{grid-template-columns:1fr;gap:32px}.lab-copy p{max-width:720px}}
+    @media(max-width:600px){.container{padding-left:21px;padding-right:21px}.nav{height:78px}.brand-name{font-size:15px}.preview-pill{display:none}.top-button{padding:10px 13px;font-size:11px}.hero{padding-top:69px;padding-bottom:72px}.hero h1{font-size:46px;margin:22px 0}.hero p{font-size:14px}.hero-meta{margin-top:38px;gap:20px}.metric b{font-size:22px}.hero-art{min-height:475px}.orbit{height:320px}.orbit-label.a{left:11px}.orbit-label.b{right:11px}.orbit-label.c{left:10px}.orbit-label.d{right:12px}.art-bottom{margin:4px 14px 15px;padding:15px 13px}.art-status{display:none}.section-heading{font-size:31px}.course-grid{grid-template-columns:1fr;gap:13px}.course-card{min-height:190px}.course-card h3{margin-top:40px}.journey{padding-bottom:68px}.lab{padding-top:65px;padding-bottom:75px}.scenario{padding:19px}.situation h3{font-size:16px}.closing{padding-top:60px;padding-bottom:70px;display:block}.closing a{margin-top:22px}.option{padding:13px 11px}footer{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<div class="site">
+  <div class="container">
+    <header class="nav" aria-label="站点导航">
+      <a class="brand" href="#home" aria-label="Codex Mastery Lab 首页">
+        <span class="mark" aria-hidden="true"><svg fill="none" viewBox="0 0 32 32"><circle cx="15.9" cy="15.9" r="9.8" stroke="#FF8968" stroke-width="1.8" stroke-dasharray="39 15" stroke-linecap="round"/><circle cx="16" cy="16" r="3.8" fill="#8ED4E3"/><path d="m20.5 8.6 6.1-3m-4 7.6 4 2.5" stroke="#FF8968" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span><span class="brand-name">CODEX <span style="color:var(--coral)">MASTERY</span></span><br/><span class="brand-sub">LAB / 驾驭 Codex 实战学院</span></span>
+      </a>
+      <nav class="nav-links" aria-label="主导航"><a href="#journey">学习体系</a><a href="#lab">诊断训练场</a><a href="#about">关于教材</a></nav>
+      <div class="nav-right"><span class="preview-pill">设计预览 · 非正式课程</span><a class="top-button" href="#journey">探索课程 ↗</a></div>
+    </header>
+  </div>
+  <main id="home">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">MASTER THE AGENT. OWN THE OUTCOME.</div>
+          <h1 id="hero-title">不只是使用 Codex。<span>学会驾驭它。</span></h1>
+          <p>从一个模糊想法，到真实、可运行、可验证的成果。建立判断力、执行力与纠偏能力，让 AI 代理真正成为你能掌控的工作伙伴。</p>
+          <div class="buttons"><a class="btn-primary" href="#journey">探索学习体系 <span aria-hidden="true">↗</span></a><a class="btn-secondary" href="#lab">体验一次纠偏判断 <span aria-hidden="true">↘</span></a></div>
+          <div class="hero-meta" aria-label="计划中的教材规模"><div class="metric"><b>08</b><span>个能力部分</span></div><div class="metric"><b>28</b><span>章系统课程</span></div><div class="metric"><b>05</b><span>类实战案例</span></div></div>
+        </div>
+        <figure class="hero-art" aria-label="驾驭 Codex 的工作回路：从意图收集事实，根据证据执行与调整，不断反馈">
+          <div class="art-header"><span>THE CONTROL LOOP / 控制回路</span><div class="art-dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
+          <div class="orbit">
+            <svg viewBox="0 0 460 365" role="presentation" aria-hidden="true"><defs><linearGradient id="pathGrad" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#69BED6" stop-opacity=".33"/><stop offset="58%" stop-color="#8ED4E3" stop-opacity=".8"/><stop offset="100%" stop-color="#FF8968" stop-opacity=".85"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3.5"/></filter></defs>
+              <circle cx="230" cy="180" r="140" fill="none" stroke="#7ba1b5" stroke-width="1" stroke-opacity=".19" stroke-dasharray="3 8"/>
+              <circle cx="230" cy="180" r="111" fill="none" stroke="#7ba1b5" stroke-width="1.3" stroke-opacity=".12"/>
+              <path d="M110 95 Q220 14 351 100 Q424 163 352 259 Q220 342 105 258 Q53 170 110 95Z" fill="none" stroke="url(#pathGrad)" stroke-width="3.4" stroke-linecap="round"/>
+              <path d="M110 95 Q220 14 351 100 Q424 163 352 259" fill="none" stroke="#7de0f7" stroke-width="6.5" opacity=".12" filter="url(#glow)"/>
+              <g fill="#182e3e" stroke="#a8dcdf" stroke-width="2"><circle cx="110" cy="95" r="9.5"/><circle cx="351" cy="100" r="9.5"/><circle cx="352" cy="259" r="9.5"/></g>
+              <circle cx="105" cy="258" r="11.5" fill="#FF8968"/><circle cx="105" cy="258" r="22" fill="none" stroke="#FF8968" stroke-opacity=".28"/>
+              <path d="m338 97 11 5-2-13" fill="none" stroke="#8ED4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m98 268-1-11 11 1" fill="none" stroke="#FF8968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <g opacity=".14" stroke="#8dc7d3"><path d="M230 14v47M230 303v47M44 180h65M352 180h64"/></g>
+            </svg>
+            <span class="orbit-center"><strong>掌控</strong><small>JUDGMENT</small></span>
+            <span class="orbit-label a">01 · 意图</span><span class="orbit-label b">02 · 事实</span><span class="orbit-label c">04 · 调整</span><span class="orbit-label d">03 · 行动</span>
+          </div>
+          <div class="art-bottom"><div><b>有方向的工作，才有可验证的结果。</b><p>判断下一步，比要求模型继续工作更重要。</p></div><div class="art-status">VISUAL CONCEPT</div></div>
+        </figure>
+      </section>
+    </div>
+    <section class="container journey" id="journey" aria-labelledby="journey-title">
+      <div class="section-top"><span class="section-kicker">LEARNING JOURNEY / 学习路径</span><h2 class="section-heading" id="journey-title">从“会用”，走向“能掌控”。</h2><p class="section-sub">体系化的 28 章学习计划，重点不是记住多少功能，而是面对变化时知道该采取哪一个行动。</p></div>
+      <div class="course-grid">
+        <article class="course-card"><span class="card-num">PART 01—02</span><h3>认识 · 定义</h3><p>理解 Codex 如何工作，把模糊意图带向具体可检查的任务。</p></article>
+        <article class="course-card coral"><span class="card-num">PART 03—04</span><h3>调查 · 推进</h3><p>为 Agent 提供高质量上下文，根据证据决定合适的工作路线。</p></article>
+        <article class="course-card lime"><span class="card-num">PART 05—06</span><h3>验证 · 纠偏</h3><p>知道什么算完成，尤其在失败时找到根因，而非叠加无效规则。</p></article>
+        <article class="course-card pink"><span class="card-num">PART 07—08</span><h3>扩展 · 掌控</h3><p>通过工具、复用和长期协作，面对陌生项目也能稳定推进。</p></article>
+      </div>
+      <div class="journey-line"><b>八部分课程：</b> 认识执行搭档 / 把想法变成工作 / 上下文与现状调查 / 决定怎样推进 / 验证成果 / 诊断纠偏 / 扩展复用 / 长任务协作</div>
+    </section>
+    <div class="lab-wrap" id="lab">
+      <section class="container lab" aria-labelledby="lab-heading">
+        <div class="lab-copy"><span class="section-kicker">INTERACTIVE LAB / 实战训练场</span><h2 id="lab-heading">Codex 修了三次，<br/>问题还在。<br/><span style="color:var(--coral)">你会怎样接管？</span></h2><p>你让 Codex 修复删除功能。页面上那条记录消失了，但是刷新后又出现。它已经连续三次调整界面，仍然没用。接下来应该做什么？</p><div class="lab-points"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg> 练习判断下一步，而非背诵唯一提示词</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg> 真实案例将在第 18 章提供源代码与复现步骤</span></div></div>
+        <div class="scenario">
+          <div class="scenario-head"><b>场景 018 / 证据驱动的纠偏</b><span class="scenario-tag">互动体验</span></div>
+          <div class="situation"><h3>删除后页面正确，为什么一刷新就恢复？</h3><p>请选择最值得优先采取的下一步。此练习是设计样稿中的教学情境，并非真实运行的 Codex 对话。</p></div>
+          <div class="options" role="group" aria-label="选择下一步">
+            <button class="option" type="button" data-choice="a" aria-pressed="false"><span>A</span><strong>继续让 Codex 调整渲染，加一次延时和重新刷新</strong></button>
+            <button class="option" type="button" data-choice="b" aria-pressed="false"><span>B</span><strong>先调查删除 → 数据写入 → 刷新读回的实际路径</strong></button>
+            <button class="option" type="button" data-choice="c" aria-pressed="false"><span>C</span><strong>直接全部重写，不再理会已有代码与检查结果</strong></button>
+          </div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite"><strong>请选择一个行动</strong><p>系统会解释该选择能获得什么证据，以及下一步如何推进。</p></div>
+          <div class="scenario-footer"><small>可多次选择，比较不同路线的价值</small><button class="reset" type="button" id="reset">重置练习 ↺</button></div>
+        </div>
+      </section>
+    </div>
+    <section class="container closing" id="about"><div><span class="section-kicker">BUILD THE SKILL OF STEERING</span><h2>不替你判断，<br/>而是教你形成判断力。</h2><p>本页面为写书项目随附的视觉与交互方向样稿。正式产品会接入完整教材、真实可运行案例、SVG 图解、实际截图与经验证的电子书输出。</p></div><a class="btn-primary" href="#home">回到开篇 <span aria-hidden="true">↑</span></a></section>
+  </main>
+  <div class="container"><footer><div class="brand"><span class="brand-name" style="font-size:12px">CODEX MASTERY LAB</span></div><span>DESIGN DIRECTION / PREVIEW ONLY · 非正式网站、非已完结教材</span></footer></div>
+</div>
+<script>
+  (() => {
+    const results = {
+      a: { title: '这可能延续无效修补', body: '点击删除后界面已经更新，问题在刷新后才显现。再次调整渲染不一定能解释旧数据为什么回来。更有价值的下一步是沿数据保存与读取路径观察事实。', style: 'warning' },
+      b: { title: '优先获得能区分原因的证据', body: '这条路线与故障现象直接相关：分别检查内存变化、持久化写入、刷新后读取，区分是没有保存、读取了旧值还是存在其他数据源。找到证据后再做最小修复。', style: 'positive' },
+      c: { title: '整体重写通常过早', body: '没有定位原因就重写，可能损失已完成的功能，也无法确认重写是否消除了根因。除非已有证据显示原架构无法修复，否则先做更小的区分性检查。', style: 'warning' }
+    };
+    const buttons = Array.from(document.querySelectorAll('[data-choice]'));
+    const feedback = document.getElementById('feedback');
+    const render = choice => {
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.choice === choice)));
+      feedback.className = 'feedback';
+      if (!choice) {
+        feedback.innerHTML = '<strong>请选择一个行动</strong><p>系统会解释该选择能获得什么证据，以及下一步如何推进。</p>';
+        return;
+      }
+      const result = results[choice];
+      feedback.classList.add(result.style);
+      const strong = document.createElement('strong');
+      strong.textContent = result.title;
+      const text = document.createElement('p');
+      text.textContent = result.body;
+      feedback.replaceChildren(strong, text);
+    };
+    buttons.forEach(button => button.addEventListener('click', () => render(button.dataset.choice)));
+    document.getElementById('reset').addEventListener('click', () => render(null));
+  })();
+</script>
+</body>
+</html>

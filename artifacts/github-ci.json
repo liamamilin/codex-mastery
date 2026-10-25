@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-25",
+  "repository": "liamamilin/codex-mastery",
+  "commit": "330488fc5bbcea349b2ed0d057d5440d04bddcbb",
+  "runId": 40206290710,
+  "runUrl": "https://github.com/liamamilin/codex-mastery/actions/runs/40206290710",
+  "build": {
+    "conclusion": "success",
+    "steps": [
+      "npm ci",
+      "npm test",
+      "npm run build",
+      "static target checks",
+      "upload Pages artifact"
+    ]
+  },
+  "deploy": {
+    "conclusion": "failure",
+    "step": "Configure GitHub Pages",
+    "reason": "Pages site is not enabled / Source is not GitHub Actions; API returned Not Found.",
+    "requiredAction": "Repository Settings > Pages > Source > GitHub Actions, then rerun failed deploy job."
+  },
+  "onlineAcceptance": "not performed; deployment did not complete"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "codex-mastery-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev book",
+    "build": "vitepress build book",
+    "preview": "vitepress preview book"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4",
+    "vue": "^3.5.0"
+  }
+}

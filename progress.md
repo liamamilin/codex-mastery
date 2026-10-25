@@ -22,7 +22,11 @@
 
 ## 远端与发布
 
-用户已明确授权提交到 `https://github.com/liamamilin/codex-mastery.git`，并要求最终 GitHub Pages 公开访问。仓库存在且初始为空，当前项目已初始化 main 与 origin。最终提交、推送及 Pages 验收状态将在实际操作后追加，不能把目标 URL 当成上线证据。
+用户已明确授权提交与 GitHub Pages 公开访问。源码已提交到 [liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)，主体提交为 `330488fc5bbcea349b2ed0d057d5440d04bddcbb`。终端没有 GitHub 登录，直接 push 失败；改用已授权 GitHub 连接创建同一文件树，核对 tree SHA 与本地一致后，将本地分支对齐并跟踪 origin/main，没有丢失文件。
+
+[Actions 运行 #1](https://github.com/liamamilin/codex-mastery/actions/runs/40206290710) 的 build job 成功：安装、测试、构建、路径检查与产物上传全部通过。deploy job 在 Configure GitHub Pages 失败，明确错误为 Pages 尚未启用 / Source 未设为 GitHub Actions，返回 Not Found。浏览器 GitHub 未登录，连接器无仓库 Pages 设置接口，已请求用户完成一次设置：Settings → Pages → Source → GitHub Actions。之后使用 GitHub 连接重新运行失败 job，再验收公开 URL。详见 `artifacts/github-ci.json`。
+
+**网站尚未上线，线上验收未进行。** 目标地址 `https://liamamilin.github.io/codex-mastery/` 只有成功部署后才有效。
 
 ## 尚未完成
 

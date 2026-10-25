@@ -65,7 +65,7 @@ Windows Python Launcher 用户将 `python3` 换成 `py -3`。打开 `http://loca
 
 工作流 `.github/workflows/deploy.yml` 从 `main` 自动安装锁定依赖、测试、构建、检查路径并部署。仓库 **Settings → Pages → Source** 需要设置为 **GitHub Actions**。默认从仓库名推断 base；自定义域名可设置仓库变量 `SITE_BASE=/`。
 
-目标仓库：[liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)。目标网址为 `https://liamamilin.github.io/codex-mastery/`；是否已成功上线以 [progress.md](progress.md) 中的实际记录为准。详见 [部署文档](docs/deployment.md)。
+目标仓库：[liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)。目标网址为 `https://liamamilin.github.io/codex-mastery/`；当前源码已提交，Actions 构建通过，公开部署等待首次启用 Pages；最新状态以 [progress.md](progress.md) 为准。详见 [部署文档](docs/deployment.md)。
 
 ## 目录与维护
 
