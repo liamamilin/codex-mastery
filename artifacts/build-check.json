@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-25T15:12:22.548Z",
+  "buildDirectory": "book/.vitepress/dist",
+  "siteBase": "/codex-mastery/",
+  "pages": 11,
+  "checkedReferences": 225,
+  "skippedReferences": 106,
+  "errors": [],
+  "passed": true,
+  "scope": "Static a[href], img[src], script[src] and link[href] targets only; excludes fragments, external URLs, dynamic imports and browser behavior."
+}

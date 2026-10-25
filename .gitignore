@@ -1,0 +1,15 @@
+node_modules/
+book/.vitepress/cache/
+book/.vitepress/.temp/
+book/.vitepress/dist/
+.DS_Store
+*.log
+.env*
+!.env.example
+codex-tutorial/
+infer/
+artifacts/browser/
+book/public/lab/
+book/public/diagrams/
+book/public/screenshots/
+my-linkshelf*/
