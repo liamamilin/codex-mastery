@@ -15,10 +15,22 @@
     ]
   },
   "deploy": {
-    "conclusion": "failure",
-    "step": "Configure GitHub Pages",
-    "reason": "Pages site is not enabled / Source is not GitHub Actions; API returned Not Found.",
-    "requiredAction": "Repository Settings > Pages > Source > GitHub Actions, then rerun failed deploy job."
+    "conclusion": "success",
+    "jobId": 121209138246,
+    "steps": [
+      "Configure GitHub Pages",
+      "Deploy to GitHub Pages"
+    ],
+    "initialFailure": "Pages was not enabled; Source setting was completed by the user, then failed jobs were rerun successfully."
   },
-  "onlineAcceptance": "not performed; deployment did not complete"
+  "onlineAcceptance": [
+    "homepage opened",
+    "Chinese full-text search and chapter navigation",
+    "deep chapter refresh",
+    "images and SVG loaded",
+    "learning progress retained after refresh",
+    "LinkShelf add/reload/delete/reload",
+    "390px menu navigation and diagnostic model feedback"
+  ],
+  "siteUrl": "https://liamamilin.github.io/codex-mastery/"
 }

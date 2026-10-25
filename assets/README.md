@@ -17,6 +17,7 @@
 | --- | --- | --- |
 | `screenshots/linkshelf-desktop.png` | `http://localhost:4174/solution/`，1440px 桌面断点 | 添加“示例网站”后，保留一条样本；第 3 章和首页引用 |
 | `screenshots/site-desktop.png` | `/codex-mastery/` 构建预览，1440px | 首页桌面布局；核对侧栏关闭后的最终版本 |
+| `screenshots/site-live.png` | `https://liamamilin.github.io/codex-mastery/`，1440px | 成功部署后的真实公开首页 |
 | `screenshots/site-mobile.png` | 同一构建预览，390×844 | 手机首页与主视觉 |
 | `screenshots/reading-mobile.png` | 第 1 章，390×844 | 明亮主题的手机正文与折叠导航 |
 

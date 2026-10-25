@@ -2,6 +2,8 @@
 
 **从基础使用到复杂任务掌控。把模糊想法转化为可验证成果的中文实战教材。**
 
+[立即在线阅读](https://liamamilin.github.io/codex-mastery/) · [GitHub 源码](https://github.com/liamamilin/codex-mastery)
+
 这是独立开源教学项目。教材、交互阅读站与可运行案例在同一仓库维护。网站是 GitHub Pages 可托管的纯静态文件，不需要服务器、数据库或运行时付费 API。
 
 当前为 **v0.1 / 第一阶段纵向切片**：导读、第 1—3 章、术语附录、LinkShelf 案例、两幅教学图解、封面源图及三个交互练习已经制作。完整课程规划为 8 部分、28 章；第 4—28 章与其余案例、PDF/EPUB 尚未完成，详见 [progress.md](progress.md)。
@@ -65,7 +67,7 @@ Windows Python Launcher 用户将 `python3` 换成 `py -3`。打开 `http://loca
 
 工作流 `.github/workflows/deploy.yml` 从 `main` 自动安装锁定依赖、测试、构建、检查路径并部署。仓库 **Settings → Pages → Source** 需要设置为 **GitHub Actions**。默认从仓库名推断 base；自定义域名可设置仓库变量 `SITE_BASE=/`。
 
-目标仓库：[liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)。目标网址为 `https://liamamilin.github.io/codex-mastery/`；当前源码已提交，Actions 构建通过，公开部署等待首次启用 Pages；最新状态以 [progress.md](progress.md) 为准。详见 [部署文档](docs/deployment.md)。
+目标仓库：[liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)。目标网址为 `https://liamamilin.github.io/codex-mastery/`；当前已成功部署并完成线上关键路径验收；最新记录见 [progress.md](progress.md)。详见 [部署文档](docs/deployment.md)。
 
 ## 目录与维护
 

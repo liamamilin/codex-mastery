@@ -40,4 +40,10 @@
 
 ## 验证界限
 
-未实测真实手机硬件、Safari/Firefox、Windows/WSL 安装和账号登录。localStorage 被禁用、损坏或配额不足等分支由 Node 逻辑测试验证，不冒充浏览器策略全覆盖。尚未完成完整 28 章、案例 B—E、PDF/EPUB。线上部署状态见 `progress.md`；本机预览不等于公开上线。
+未实测真实手机硬件、Safari/Firefox、Windows/WSL 安装和账号登录。localStorage 被禁用、损坏或配额不足等分支由 Node 逻辑测试验证，不冒充浏览器策略全覆盖。尚未完成完整 28 章、案例 B—E、PDF/EPUB。GitHub Pages 首次失败后由用户启用 Source=GitHub Actions，重新部署成功；随后进行了下方线上验收。
+
+## 公开站点验收
+
+实际打开 `https://liamamilin.github.io/codex-mastery/`。确认首页和案例截图加载，中文搜索“刷新”返回第 3 章并能进入具体段落；直接刷新深层章节后正文与图解正常，浏览器控制台未报告错误。交互脚本加载后标记章节完成，刷新后保留，再撤销。GitHub Pages 上的 LinkShelf 用“线上验收链接” / `https://example.net` 实际执行新增→刷新→删除→刷新，删除后列表为空；仅操作测试条目。手机 390px 下从目录进入第 1 章，诊断模型实际显示“只改列表”以及“刷新后读回旧记录”的不同反馈，并可重置。
+
+首次页面载入时静态正文先显示、交互脚本随后加载；验收在脚本完成加载后确认可操作反馈，不把提前点击尚未接管的静态按钮当作功能通过。真实线上首屏截图：`assets/screenshots/site-live.png`。
