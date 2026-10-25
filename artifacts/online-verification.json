@@ -1,0 +1,84 @@
+{
+  "checkedAtUTC": "2026-10-25T16:57:02.373023+00:00",
+  "site": "https://liamamilin.github.io/codex-mastery/",
+  "releaseCommit": "799ea01075582144453101096452b729cfc9e9f3",
+  "actionsRun": "https://github.com/liamamilin/codex-mastery/actions/runs/40212950521",
+  "http": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 26146,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "28-毕业实战.html",
+      "status": 200,
+      "bytes": 49783,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "resources.html",
+      "status": 200,
+      "bytes": 38372,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "screenshots/phantom-delete.jpg",
+      "status": 200,
+      "bytes": 103148,
+      "contentType": "image/jpeg"
+    },
+    {
+      "path": "lab/linkshelf/extended/app.mjs",
+      "status": 200,
+      "bytes": 7597,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "lab/linkshelf/extended/sample-backup.json",
+      "status": 200,
+      "bytes": 480,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "path": "lab/phantom-delete/starter/core.mjs",
+      "status": 200,
+      "bytes": 190,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "downloads/codex-mastery.pdf",
+      "status": 200,
+      "bytes": 1001115,
+      "sha256": "4264d1847b31ea494484926f77dab0815de0e5c18146de5890ef27dcde191b3c",
+      "matchesManifest": true,
+      "contentType": "application/pdf"
+    },
+    {
+      "path": "downloads/codex-mastery.epub",
+      "status": 200,
+      "bytes": 1753816,
+      "sha256": "00857c425851a3ef9b6da71a81c9f5ade6a51d7d017ae5f4d9700337878bb202",
+      "matchesManifest": true,
+      "contentType": "application/epub+zip"
+    }
+  ],
+  "browser": [
+    "v1.0 28 chapters / 7 interactions / 5 case types visible",
+    "chapter10 feedback/reset and completion survives reload then reverted",
+    "390px curriculum lists 28 chapters and opens chapter28 without overflow",
+    "extended case add tagged record / reload / delete own record / reload empty",
+    "D starter memory2/stored3 then reload recovers3"
+  ],
+  "warning": {
+    "message": "Hydration completed but contains mismatches.",
+    "observedAtUTC": "2026-10-25T16:46:37.855Z",
+    "context": "One continuous multi-route acceptance session; production log did not identify the triggering page.",
+    "reproduction": "Not reproduced in fresh online chapter10 save/reload/revert, resource page, mobile curriculum/chapter28 sequence; not reproduced in detailed local UTC production build.",
+    "status": "unresolved, non-blocking observation; no repair claimed"
+  },
+  "limits": [
+    "No physical phone or independent EPUB reader checked.",
+    "No Windows/WSL installation and account login performed."
+  ]
+}

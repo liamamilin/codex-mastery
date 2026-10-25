@@ -1,3 +1,5 @@
+# Keep raw Markdown hashes stable across Windows and Unix checkouts.
+*.md text eol=lf
 # Generated publications and captured screenshots are binary review artifacts.
 *.pdf binary
 *.epub binary

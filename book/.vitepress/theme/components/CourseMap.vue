@@ -14,7 +14,7 @@ function chapterUrl(id: number) {
     <div class="course-heading">
       <span class="eyebrow">THE CURRICULUM / 8 PARTS · 28 CHAPTERS</span>
       <h1>一条从使用，<br>走向<span>掌控</span>的路线。</h1>
-      <p>从看懂第一次行动，到独立驾驭陌生任务。<br>目前开放导读与 {{ publishedSummary() }}，其余正文持续制作。</p>
+      <p>从看懂第一次行动，到独立驾驭陌生任务。<br>导读与 {{ publishedSummary() }} 已全部开放。<br>从首次成果到独立毕业，在真实任务中形成能力。</p>
       <a class="inline-link" :href="withBase('/00-导读.html')">第一次来？先读导读 ↗</a>
     </div>
     <div class="course-progress">

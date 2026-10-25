@@ -1,36 +1,129 @@
 {
-  "checkedAt": "2026-10-25",
   "repository": "liamamilin/codex-mastery",
-  "commit": "330488fc5bbcea349b2ed0d057d5440d04bddcbb",
-  "runId": 40206290710,
-  "runUrl": "https://github.com/liamamilin/codex-mastery/actions/runs/40206290710",
-  "build": {
-    "conclusion": "success",
-    "steps": [
-      "npm ci",
-      "npm test",
-      "npm run build",
-      "static target checks",
-      "upload Pages artifact"
-    ]
-  },
-  "deploy": {
-    "conclusion": "success",
-    "jobId": 121209138246,
-    "steps": [
-      "Configure GitHub Pages",
-      "Deploy to GitHub Pages"
-    ],
-    "initialFailure": "Pages was not enabled; Source setting was completed by the user, then failed jobs were rerun successfully."
-  },
-  "onlineAcceptance": [
-    "homepage opened",
-    "Chinese full-text search and chapter navigation",
-    "deep chapter refresh",
-    "images and SVG loaded",
-    "learning progress retained after refresh",
-    "LinkShelf add/reload/delete/reload",
-    "390px menu navigation and diagnostic model feedback"
+  "releaseCommit": "799ea01075582144453101096452b729cfc9e9f3",
+  "runId": 40212950521,
+  "runUrl": "https://github.com/liamamilin/codex-mastery/actions/runs/40212950521",
+  "jobs": [
+    {
+      "id": 121227917432,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40212950521,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Set up Node.js",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install locked dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run case tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build the static book",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Check generated pages and asset paths",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Upload the static site",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Post Set up Node.js",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Check out source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        }
+      ]
+    },
+    {
+      "id": 121228018639,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40212950521,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Configure GitHub Pages",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Deploy to GitHub Pages",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        }
+      ]
+    }
   ],
-  "siteUrl": "https://liamamilin.github.io/codex-mastery/"
+  "verifiedLogLines": [
+    "2026-10-25T16:42:32.3781806Z ℹ tests 28",
+    "2026-10-25T16:42:32.3782387Z ℹ fail 0",
+    "2026-10-25T16:42:32.7411230Z Ran 4 tests in 0.321s",
+    "2026-10-25T16:42:33.3886305Z Ran 4 tests in 0.600s",
+    "2026-10-25T16:42:33.8725235Z Ran 5 tests in 0.438s",
+    "2026-10-25T16:42:33.9892803Z Ran 3 tests in 0.070s",
+    "2026-10-25T16:42:34.1371867Z Prepared 28 chapter entries from Markdown.",
+    "2026-10-25T16:42:38.3291732Z Build check passed: 39 HTML pages, 1909 local targets (/codex-mastery/)."
+  ],
+  "priorSuccessfulSliceRun": 40207130404
 }
