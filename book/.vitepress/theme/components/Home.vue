@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
-import { published } from '../../course'
+import { published, publishedSummary, availableCases, edition } from '../../course'
 import { useLearning } from '../learning'
 import ControlLoop from './ControlLoop.vue'
 import DecisionLab from './DecisionLab.vue'
+import { downloads } from '../../downloads.generated'
 const { completed } = useLearning()
 const next = computed(() => published.find(c => !completed.value.includes(c.id)))
+const firstSteps = published.slice(0, 3)
+const nextSkills = published.filter(chapter => [4, 7, 18].includes(chapter.id))
+const caseCards = [
+  { id: 'B', name: 'TaskTrail', type: '陌生 Python 仓库', task: '先读懂入口和数据，再增加状态筛选。', file: '07-陌生代码' },
+  { id: 'C', name: 'CSV Insight', type: '离线数据报告', task: '让每个数字都能由另一条路径核对。', file: '11-最小实验' },
+  { id: 'D', name: 'Phantom Delete', type: '真实故障与修复', task: '识别无效补丁，找到数据恢复的原因。', file: '18-停止无效修补' },
+  { id: 'E', name: '毕业实战', type: '两套陌生任务', task: '带着方法独立完成；起点保留未知与缺陷。', file: '28-毕业实战' }
+]
 </script>
 
 <template>
@@ -18,7 +27,7 @@ const next = computed(() => published.find(c => !completed.value.includes(c.id))
           <h1>不只是使用。<br>学会<span class="coral-word">驾驭 Codex<span class="word-dot">.</span></span></h1>
           <p class="hero-description">把模糊想法变成可验证的成果。<br>理解它的行动，保留你的判断，<br class="mobile-break">在失败时找回方向。</p>
           <div class="hero-actions"><a class="primary-button" :href="withBase('/00-导读.html')">开始学习 <span>↗</span></a><a class="text-button" :href="withBase('/labs.html#诊断训练-删除了-为什么又出现')">体验纠偏训练 <span>→</span></a></div>
-          <div class="hero-edition"><span>VOL. 01</span> 导读与第 1—3 章已开放 <span class="edition-divider">/</span> 持续制作中</div>
+          <div class="hero-edition"><span>{{ edition }}</span> 导读与 {{ published.length }} 章正文已开放 <span class="edition-divider">/</span> 完整首版</div>
         </div>
         <div class="hero-visual" aria-label="协作控制回路：从意图，经行动到证据，由判断回到下一步">
           <div class="visual-topline"><span>THE HUMAN–AGENT LOOP</span><span class="visual-cross">+</span></div>
@@ -44,21 +53,22 @@ const next = computed(() => published.find(c => !completed.value.includes(c.id))
           <div class="visual-bottomline"><span class="live-dot teal-dot"></span><span>关键不是一次成功，而是知道下一步。</span></div>
         </div>
       </div>
-      <div class="hero-stats"><div><strong>08</strong><span>递进学习部分</span></div><div><strong>28</strong><span>章完整课程规划</span></div><div><strong>03</strong><span>章正文已开放</span></div><div><strong>01</strong><span>个可运行案例</span></div><a :href="withBase('/curriculum.html')">查看完整路线 <span>↗</span></a></div>
+      <div class="hero-stats"><div><strong>08</strong><span>递进学习部分</span></div><div><strong>28</strong><span>章递进课程</span></div><div><strong>07</strong><span>种交互学习体验</span></div><div><strong>{{ String(availableCases).padStart(2, '0') }}</strong><span>类实战任务</span></div><a :href="withBase('/curriculum.html')">查看完整路线 <span>↗</span></a></div>
     </section>
 
     <section class="home-section start-section">
       <div class="section-heading"><div><span class="eyebrow">01 / START WITH ACTION</span><h2>第一次掌控，从这里开始。</h2></div><p>读一章，做一件事。<br>让每一步都有看得见的结果。</p></div>
-      <div v-if="completed.length" class="resume-strip"><span>学习记录 {{ completed.length }} / 3</span><a :href="withBase(next ? `/${next.file}.html` : '/labs.html')">{{ next ? `继续第 ${next.id} 章` : '进入实战实验室' }} →</a></div>
-      <div class="chapter-cards"><a v-for="c in published" :key="c.id" :href="withBase(`/${c.file}.html`)" class="chapter-card"><div class="card-top"><span>CHAPTER {{ String(c.id).padStart(2, '0') }}</span><span>{{ completed.includes(c.id) ? '✓ 已完成' : c.duration }}</span></div><div class="chapter-glyph" :class="`glyph-${c.id}`"><span></span><span></span><span></span></div><h3>{{ c.label }}</h3><p>{{ c.skill }}</p><div class="card-bottom"><span>正文 + 动手练习</span><span>↗</span></div></a></div>
+      <div v-if="completed.length" class="resume-strip"><span>学习记录 {{ completed.length }} / {{ published.length }}</span><a :href="withBase(next ? `/${next.file}.html` : '/labs.html')">{{ next ? `继续第 ${next.id} 章` : '进入实战实验室' }} →</a></div>
+      <div class="chapter-cards"><a v-for="c in firstSteps" :key="c.id" :href="withBase(`/${c.file}.html`)" class="chapter-card"><div class="card-top"><span>CHAPTER {{ String(c.id).padStart(2, '0') }}</span><span>{{ completed.includes(c.id) ? '✓ 已完成' : c.duration }}</span></div><div class="chapter-glyph" :class="`glyph-${c.id}`"><span></span><span></span><span></span></div><h3>{{ c.label }}</h3><p>{{ c.skill }}</p><div class="card-bottom"><span>正文 + 动手练习</span><span>↗</span></div></a></div>
+      <div class="next-skills"><a v-for="chapter in nextSkills" :key="chapter.id" :href="withBase(`/${chapter.file}.html`)"><span class="eyebrow">CHAPTER {{ String(chapter.id).padStart(2, '0') }}</span><strong>{{ chapter.skill }}</strong><span>继续深入 ↗</span></a></div>
     </section>
 
     <section class="method-section"><div class="home-section method-inner"><div class="method-intro"><span class="eyebrow">02 / THE WAY OF WORKING</span><h2>你掌握的，<br>是一整套工作方法。</h2><p>Codex 负责执行。你学会确认事实、选择路线、判断证据，并在需要时改变方向。</p><a :href="withBase('/curriculum.html')" class="inline-link">探索 8 部分学习路线 ↗</a></div><ControlLoop /></div></section>
 
-    <section class="home-section case-section"><div class="section-heading"><div><span class="eyebrow">03 / BUILD SOMETHING REAL</span><h2>一套能亲手运行的实验室。</h2></div><a class="inline-link" :href="withBase('/labs.html')">进入实验室 ↗</a></div><div class="case-showcase"><div class="case-copy"><span class="case-tag">CASE A · 已开放</span><h3>LinkShelf<span>你的个人链接收藏架</span></h3><p>保存一条链接，看见它留在列表里。刷新页面，确认它仍然存在。你将亲自走完从任务到验收的第一个闭环。</p><div class="tech-tags"><span>原生 JavaScript</span><span>浏览器本地存储</span><span>无需 API Key</span></div><a class="primary-button" :href="withBase('/lab/linkshelf/solution/index.html')" target="_blank" rel="noopener">打开真实案例 ↗</a><small>真实网页应用；Codex 操作在你自己的电脑完成。</small></div><a class="case-preview" :href="withBase('/lab/linkshelf/solution/index.html')" target="_blank" rel="noopener"><div class="preview-toolbar"><span></span><span></span><span></span><b>LINKSHELF / LOCAL FIRST</b></div><img :src="withBase('/screenshots/linkshelf-desktop.png')" alt="真实 LinkShelf 案例截图：收藏表单和已保存的示例网站" loading="lazy" width="1200" height="800"/></a></div></section>
+    <section class="home-section case-section"><div class="section-heading"><div><span class="eyebrow">03 / BUILD SOMETHING REAL</span><h2>一套能亲手运行的实验室。</h2></div><a class="inline-link" :href="withBase('/labs.html')">进入实验室 ↗</a></div><div class="case-showcase"><div class="case-copy"><span class="case-tag">CASE A · 已开放</span><h3>LinkShelf<span>你的个人链接收藏架</span></h3><p>保存一条链接，看见它留在列表里。刷新页面，确认它仍然存在。你将亲自走完从任务到验收的第一个闭环。</p><div class="tech-tags"><span>原生 JavaScript</span><span>浏览器本地存储</span><span>无需 API Key</span></div><a class="primary-button" :href="withBase('/lab/linkshelf/solution/index.html')" target="_blank" rel="noopener">打开真实案例 ↗</a><small>真实网页应用；Codex 操作在你自己的电脑完成。</small></div><a class="case-preview" :href="withBase('/lab/linkshelf/solution/index.html')" target="_blank" rel="noopener"><div class="preview-toolbar"><span></span><span></span><span></span><b>LINKSHELF / LOCAL FIRST</b></div><img :src="withBase('/screenshots/linkshelf-desktop.jpg')" alt="真实 LinkShelf 案例截图：收藏表单和已保存的示例网站" loading="lazy" width="1200" height="800"/></a></div><div class="lab-gallery"><a v-for="item in caseCards" :key="item.id" :href="withBase(`/${item.file}.html`)"><span class="lab-gallery-top">CASE {{ item.id }}<b>↗</b></span><h3>{{ item.name }}</h3><span class="lab-gallery-type">{{ item.type }}</span><p>{{ item.task }}</p></a></div></section>
 
-    <section class="training-section"><div class="home-section"><div class="section-heading"><div><span class="eyebrow">04 / THINK, THEN REPAIR</span><h2>失败，也是你要学会的部分。</h2></div><p>先看现象，再找证据。<br>试试这道可以重置的诊断练习。</p></div><DecisionLab compact /></div></section>
+    <section class="training-section"><div class="home-section"><div class="section-heading"><div><span class="eyebrow">04 / THINK, THEN REPAIR</span><h2>失败，也是你要学会的部分。</h2></div><p>先看现象，再找证据。<br>试试这道可以重置的诊断练习。</p></div><DecisionLab compact /><div class="training-next"><span>模型帮你看懂关系，真实故障项目让你找到证据。</span><a :href="withBase('/18-停止无效修补.html')">进入第 18 章 · 真实纠偏实战 ↗</a></div></div></section>
 
-    <section class="home-section last-section"><span class="eyebrow">YOUR NEXT MOVE</span><h2>把第一条指令，<br>变成第一个真实成果。</h2><a class="primary-button" :href="withBase('/00-导读.html')">翻开导读 →</a><p>独立开源中文教学项目 · 第一阶段 v0.1<br>PDF / EPUB 将在生成与验收后开放。</p></section>
+    <section class="home-section last-section"><span class="eyebrow">YOUR NEXT MOVE</span><h2>把第一条指令，<br>变成第一个真实成果。</h2><a class="primary-button" :href="withBase('/00-导读.html')">翻开导读 →</a><p>独立开源中文教学项目 · {{ edition }} · {{ publishedSummary() }} 已开放<br>{{ downloads.length ? 'PDF / EPUB 已生成，可从阅读与下载页带走。' : 'PDF / EPUB 将在生成与验收后开放。' }}</p></section>
   </main>
 </template>

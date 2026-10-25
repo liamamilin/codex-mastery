@@ -1,0 +1,76 @@
+
+> codex-mastery-lab@1.0.0 test
+> node scripts/test.mjs
+
+✔ empty storage starts with an empty collection and leaves other keys untouched (0.684417ms)
+✔ add, reload, delete, reload preserves the deletion, including the final item (0.670833ms)
+✔ valid input is trimmed and URL is normalized without changing the title to markup (0.167083ms)
+✔ blank or oversized titles and malformed or executable URLs are rejected (0.141708ms)
+✔ read fails explicitly for corrupt data without deleting or rewriting it (0.194625ms)
+✔ read rejects duplicate IDs so a delete cannot remove multiple hidden duplicates (0.059958ms)
+✔ blocked storage reports read and write failures instead of claiming persistence (0.139959ms)
+✔ invalid records cannot overwrite already saved data (0.061708ms)
+✔ search matches title or URL without modifying saved records (0.293ms)
+✔ export is readable versioned JSON and retains original record IDs and data (0.270625ms)
+✔ extended records persist tags, support deletion and never touch the basic app key (0.814833ms)
+✔ optional tags normalize comma-separated input and reject invalid tags or unsafe URLs (1.358583ms)
+✔ keyword and tag filters intersect and untagged records are observable (0.176541ms)
+✔ basic version-1 backup imports without tags, extended export retains tags (0.211125ms)
+✔ merge skips normalized duplicate URLs, keeps existing metadata and replaces incoming IDs (0.170333ms)
+✔ invalid structure, unsafe records and duplicate IDs reject the entire import (0.158584ms)
+✔ import byte and record limits are enforced before saving (5.552542ms)
+✔ merged collection cap and ID collision fail without modifying the current collection (3.511084ms)
+✔ failed writes and malformed existing storage leave old data untouched (0.300666ms)
+✔ starter deterministically reproduces UI-memory deletion followed by recovery on reload (1.124459ms)
+✔ solution deletes durably while preserving neighbouring records (0.262125ms)
+✔ solution can remove every record; an empty array is not mistaken for uninitialized storage (0.088833ms)
+✔ add and reload remain correct after a successful deletion (0.195708ms)
+✔ a failed persistence write does not mutate the input list or old saved data (0.218666ms)
+✔ restoring samples touches only the current D key, preserving A and the other D version (0.112209ms)
+✔ read rejects malformed data instead of overwriting it with samples (0.132042ms)
+✔ input validation rejects executable protocols and leaves saved data unchanged (0.101083ms)
+✔ unknown ID deletion is harmless, and a valid title remains plain data (0.209625ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 50.626292
+test_add_done_and_read_in_separate_processes (test_cli.TaskTrailTests) ... ok
+test_broken_json_is_not_overwritten (test_cli.TaskTrailTests) ... ok
+test_list_missing_file_is_read_only (test_cli.TaskTrailTests) ... ok
+test_rejected_operations_do_not_change_data (test_cli.TaskTrailTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.242s
+
+OK
+test_add_done_and_read_in_separate_processes (test_cli.TaskTrailTests) ... ok
+test_broken_json_is_not_overwritten (test_cli.TaskTrailTests) ... ok
+test_rejected_operations_do_not_change_data (test_cli.TaskTrailTests) ... ok
+test_status_filters_keep_data_and_default_behavior (test_cli.TaskTrailTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.473s
+
+OK
+test_bad_number_never_overwrites_previous_report (test_report.ReportTests) ... ok
+test_independent_check_rejects_visible_table_and_quality_tampering (test_report.ReportTests) ... ok
+test_repeat_is_stable_and_one_row_change_has_known_delta (test_report.ReportTests) ... ok
+test_sample_totals_quality_and_independent_check (test_report.ReportTests) ... ok
+test_schema_and_same_path_fail_without_data_loss (test_report.ReportTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.346s
+
+OK
+test_output_cannot_overwrite_input_or_its_hardlink (test_cli_safety.InputSafetyTests) ... ok
+test_empty_input_has_no_paragraphs (test_paragraphs.BasicParagraphTests) ... ok
+test_ordinary_two_paragraphs_keep_internal_newline (test_paragraphs.BasicParagraphTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.047s
+
+OK

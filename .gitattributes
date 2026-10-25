@@ -1,0 +1,6 @@
+# Generated publications and captured screenshots are binary review artifacts.
+*.pdf binary
+*.epub binary
+*.jpg binary
+# Preserve the verbatim upstream font license, including its whitespace.
+assets/fonts/OFL.txt whitespace=-blank-at-eol

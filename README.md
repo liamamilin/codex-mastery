@@ -2,31 +2,34 @@
 
 **从基础使用到复杂任务掌控。把模糊想法转化为可验证成果的中文实战教材。**
 
-[立即在线阅读](https://liamamilin.github.io/codex-mastery/) · [GitHub 源码](https://github.com/liamamilin/codex-mastery)
+[在线阅读](https://liamamilin.github.io/codex-mastery/) · [完整学习路线](https://liamamilin.github.io/codex-mastery/curriculum.html) · [实战实验室](https://liamamilin.github.io/codex-mastery/labs.html) · [电子书下载](https://liamamilin.github.io/codex-mastery/resources.html)
 
-这是独立开源教学项目。教材、交互阅读站与可运行案例在同一仓库维护。网站是 GitHub Pages 可托管的纯静态文件，不需要服务器、数据库或运行时付费 API。
+完整首版包含导读、8 部分 28 章与术语附录。学习路线从第一次运行成果，进入任务探索、上下文调查、实验与路线选择、版本和验收、失败纠偏、工具复用及长期协作。每章有明确能力终点、实际操作、失败分支和练习反馈。
 
-当前为 **v0.1 / 第一阶段纵向切片**：导读、第 1—3 章、术语附录、LinkShelf 案例、两幅教学图解、封面源图及三个交互练习已经制作。完整课程规划为 8 部分、28 章；第 4—28 章与其余案例、PDF/EPUB 尚未完成，详见 [progress.md](progress.md)。
+这是独立开源教学项目。网站为 GitHub Pages 纯静态文件，无需自建服务器、数据库或运行时付费 API。真正的 Codex 在读者自己的工作环境中运行；浏览器教学模型始终标明它的边界。
 
-## 阅读与动手
+## 从阅读到动手
 
-- 从 [导读](book/00-导读.md) 开始阅读，按第 1—3 章走完“观察 → 准备 → 实现与验收”。
-- [完整课程任务](02_完整目录与各章任务.md) 描述后续学习终点。
-- [LinkShelf 案例](cases/A-linkshelf/README.md) 提供独立起点、参考成品、测试与故障排查。
-- 网页中的诊断训练明确为浏览器教学模型；真正的 Codex 在读者自己的环境中执行。
+- [导读](book/00-导读.md)：选择路线，理解命令与教学情境的区别。
+- [A · LinkShelf](cases/A-linkshelf/README.md)：在浏览器保存、找回和删除链接，观察刷新后的状态。
+- [B · TaskTrail](cases/B-tasktrail/README.md)：接手陌生 Python 仓库，调查入口与数据，再增加状态筛选。
+- [C · CSV Insight](cases/C-csv-insight/README.md)：用人工数据生成报告，通过独立计算检查数值与统计口径。
+- [D · Phantom Delete](cases/D-phantom-delete/README.md)：确定性复现删除后恢复的故障，比较起点与参考修复。
+- [E · 毕业实战](cases/E-capstone/README.md)：会议纪要整理或文本工具维护，提供材料与未解起点，保留独立完成空间。
+- [扩展练习](extensions/README.md)：独立 Git 实验、可复用 Skill、重复执行脚本与只读连接证据。
 
-## 运行网站
+## 安装与运行网站
 
-前提：Node.js 22、npm；首次安装需要网络。从源码包解压后，在含 `package.json` 的仓库根目录运行：
+前提：Node.js 22、npm；首次安装需要网络。案例测试另需 Python 3.9+。在含 `package.json` 的仓库根目录运行：
 
 ```sh
 npm ci
 npm run dev
 ```
 
-打开终端显示的 Local 地址，按 Ctrl+C 停止。若端口被占用，使用终端实际选择的端口。PowerShell 若拦截 npm 脚本，可使用组织允许的 `npm.cmd` 入口。
+打开终端显示的 Local 地址，Ctrl+C 停止。端口被占用时以实际输出为准。PowerShell 若拦截 npm 脚本，可使用组织允许的 `npm.cmd`。
 
-构建与预览 GitHub Pages 的实际子路径（macOS / Linux）：
+发布前以实际仓库子路径构建（macOS / Linux）：
 
 ```sh
 npm test
@@ -35,7 +38,7 @@ SITE_BASE=/codex-mastery/ npm run check:build
 SITE_BASE=/codex-mastery/ npm run preview
 ```
 
-PowerShell 用下面方式设置相同的环境变量，然后执行相同 npm 命令：
+PowerShell 设置相同变量后运行对应 npm 命令：
 
 ```powershell
 $env:SITE_BASE = '/codex-mastery/'
@@ -45,43 +48,57 @@ npm run check:build
 npm run preview
 ```
 
-预览地址通常为 `http://localhost:4173/codex-mastery/`，以终端实际端口为准。`cleanUrls: false` 保留 `.html`，让深层章节无需服务器重写即可刷新访问。构建产物为 `book/.vitepress/dist/`。
+预览地址通常为 `http://localhost:4173/codex-mastery/`，以终端端口为准。`cleanUrls: false` 保留 `.html`，让深层章节在 Pages 刷新时无需服务器重写。构建产物在 `book/.vitepress/dist/`。重新构建后应重启预览，避免旧脚本缓存影响验收。
 
 ## 单独运行案例
 
-无需安装网站依赖。前提是 Python 3 和浏览器，在仓库根目录运行：
+网页案例只需 Python 3 与浏览器，无需网站依赖。在仓库根目录运行：
 
 ```sh
 python3 -m http.server 4174 --bind 127.0.0.1 --directory cases/A-linkshelf
 ```
 
-Windows Python Launcher 用户将 `python3` 换成 `py -3`。打开 `http://localhost:4174/solution/`，Ctrl+C 停止服务。跟练入口位于 `starter/`；请复制到自己的新目录，不要覆盖参考成品。
+打开 `http://localhost:4174/solution/`，Ctrl+C 停止。Windows Python Launcher 用户将 `python3` 换为 `py -3`。先把 `starter/` 复制到自己的目录，再用 Codex 实践；参考成品供行为对照，不要求界面逐字相同。其它案例的前提和命令见各自 README。
 
-## 验证记录
+## PDF 与 EPUB
 
-2026-10-25，在 macOS、Node 22.21.1、Python 3.10.13、Codex CLI 0.154.0 环境制作。实际执行过构建、子路径资源检查和 10 项案例逻辑测试。浏览器实测包括新增、刷新保存、指定删除、错误网址、搜索与 JSON 下载；教材搜索、复制、进度、清单、练习反馈和重置也经过实际操作。手机 390px 与桌面 1440px 有真实截图。
+成品在 [exports/](exports/)，由同一套 Markdown 自动生成。离线版把交互题转成文字练习；不包含浏览器搜索、进度或真正的模型执行。
 
-完整证据范围、平台未验项和发布状态见 [progress.md](progress.md) 与 [浏览器验收记录](artifacts/browser-verification.md)。CLI 安装/登录与 Windows 路径按官方文档核对，不冒充本机执行。
+```sh
+# 先按 docs/ebook.md 安装独立 Python 出版依赖
+npm run export:book
+npm run build
+```
 
-## 发布到 GitHub Pages
+[出版与验证说明](docs/ebook.md) 包含 macOS/Linux/Windows 命令、字体获取、输出校验与排版边界。字体源固定版本并校验哈希，使用 OFL 许可；无需付费账号。静态构建使用已提交的成品，不要求 CI 安装 PDF 工具；源稿变化后必须重新导出，否则构建会报告电子书过期。
 
-工作流 `.github/workflows/deploy.yml` 从 `main` 自动安装锁定依赖、测试、构建、检查路径并部署。仓库 **Settings → Pages → Source** 需要设置为 **GitHub Actions**。默认从仓库名推断 base；自定义域名可设置仓库变量 `SITE_BASE=/`。
+## 验证范围
 
-目标仓库：[liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)。目标网址为 `https://liamamilin.github.io/codex-mastery/`；当前已成功部署并完成线上关键路径验收；最新记录见 [progress.md](progress.md)。详见 [部署文档](docs/deployment.md)。
+实际执行过案例测试、CSV 独立核对与篡改回归、独立 Git 恢复实验、重复脚本运行、子路径构建及本地资源检查。浏览器实测覆盖案例保存/删除/刷新、故障起点与修复、教材搜索/复制/进度、交互反馈/重置，以及 1440px 与 390px 布局。
 
-## 目录与维护
+[progress.md](progress.md) 记录当前完成与发布状态；[浏览器记录](artifacts/browser-verification.md)、[教材审校](artifacts/editorial-review.md)、各案例 verification 和 [电子书验证](exports/verification.md) 给出证据与未验范围。没有把 Windows 安装、所有账号入口或真实阅读器兼容性冒充本机验证。
+
+## 自动发布
+
+`.github/workflows/deploy.yml` 在 `main` 更新后自动安装锁定依赖、运行案例测试、构建、检查资源并部署 GitHub Pages。仓库 Source 已设为 GitHub Actions。默认由仓库名推断 base；自定义域名可设置仓库变量 `SITE_BASE=/`。
+
+[部署与排障文档](docs/deployment.md) 说明路径、权限与验收。公开地址为 [liamamilin.github.io/codex-mastery](https://liamamilin.github.io/codex-mastery/)，版本以成功部署的 commit 为准。
+
+## 文件与维护
 
 ```text
 book/*.md                  唯一人工编辑的教材正文
-book/.vitepress/           网站配置、主题与 Vue 练习
-cases/A-linkshelf/         独立案例起点、参考成品、测试
-assets/                    可编辑 SVG 与真实截图原件
-scripts/                   静态资产准备、构建结果检查
-artifacts/                 真实验证范围与构建检查报告
-docs/deployment.md         开发、部署与排障
-progress.md                当前状态与明确续写入口
+book/.vitepress/           阅读站、导航与 Vue 练习
+cases/                    五类案例、输入、参考实现或毕业起点
+extensions/               Git、Skill、脚本与连接练习
+assets/                   SVG、真实截图、字体许可与来源
+exports/                  PDF、EPUB、来源哈希与验证记录
+scripts/                  资产准备、测试、构建检查、电子书生成
+docs/                     开发、部署与出版说明
+artifacts/                实际验收与审校记录
+progress.md               接续入口与已知限制
 ```
 
-`prepare-assets.mjs` 在开发/构建前从 `assets/` 与 `cases/` 生成 `book/public/` 中的资源副本；不要人工编辑这些副本。资料包 `00_…14_…` 保留为项目基础资料，不是正式书稿的第二来源。
+`prepare-assets.mjs` 从原件生成 `book/public/` 中的图解、案例和下载副本；不要双份编辑。课程元数据从章节 frontmatter 生成，开放章节、导航和进度范围随正文一致更新。原资料包 `00_…14_…` 保留作为基础资料，不是第二份正式正文。
 
-项目原创代码、正文和图解采用 [MIT License](LICENSE)。官方产品名称属于其权利人；外链资料遵循原站许可。
+项目原创代码、正文和图解采用 [MIT License](LICENSE)。Noto Sans SC 字体遵循 [OFL](assets/fonts/OFL.txt)。官方产品名称属于其权利人；外链资料遵循原站许可。

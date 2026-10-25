@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useClientReady } from '../client'
+const ready = useClientReady()
 import { ref } from 'vue'
 const active = ref(0)
 const steps = [
@@ -11,4 +13,4 @@ const steps = [
   ['交付', '留下可以继续的成果', '写明如何运行、实际验证范围、仍有的限制和下一步，让自己和下一次会话都能接得上。']
 ]
 </script>
-<template><div class="control-loop"><div class="loop-top"><span>工作循环 / 点击探索</span><span>0{{ active + 1 }} / 07</span></div><div class="loop-steps" aria-label="工作循环步骤"><button v-for="(step, i) in steps" :key="step[0]" @click="active = i" :aria-pressed="active === i" :class="{ active: active === i }"><span>{{ String(i + 1).padStart(2, '0') }}</span>{{ step[0] }}<b v-if="i < 6">→</b><b v-else>↺</b></button></div><div class="loop-explanation" aria-live="polite"><span class="eyebrow">{{ steps[active][0] }} / YOUR DECISION</span><h3>{{ steps[active][1] }}</h3><p>{{ steps[active][2] }}</p></div><div class="loop-note">这是学习框架；简单任务可以直接做，无需每次填写七步表格。</div></div></template>
+<template><div class="control-loop"><div class="loop-top"><span>工作循环 / 点击探索</span><span>0{{ active + 1 }} / 07</span></div><div class="loop-steps" aria-label="工作循环步骤"><button v-for="(step, i) in steps" :key="step[0]" @click="active = i" :disabled="!ready" :aria-pressed="active === i" :class="{ active: active === i }"><span>{{ String(i + 1).padStart(2, '0') }}</span>{{ step[0] }}<b v-if="i < 6">→</b><b v-else>↺</b></button></div><div class="loop-explanation" aria-live="polite"><span class="eyebrow">{{ steps[active][0] }} / YOUR DECISION</span><h3>{{ steps[active][1] }}</h3><p>{{ steps[active][2] }}</p></div><div class="loop-note">这是学习框架；简单任务可以直接做，无需每次填写七步表格。</div></div></template>

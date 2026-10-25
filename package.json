@@ -1,6 +1,6 @@
 {
   "name": "codex-mastery-lab",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -10,10 +10,13 @@
     "dev": "node scripts/prepare-assets.mjs && vitepress dev book --host 127.0.0.1",
     "build": "node scripts/prepare-assets.mjs && vitepress build book",
     "preview": "vitepress preview book --host 127.0.0.1",
-    "test": "node --test cases/A-linkshelf/tests/*.test.mjs",
-    "check:build": "node scripts/check-build.mjs"
+    "test": "node scripts/test.mjs",
+    "check:build": "node scripts/check-build.mjs",
+    "export:book": "node scripts/export-book.mjs"
   },
   "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0",
     "vitepress": "1.6.4",
     "vue": "3.5.22"
   }

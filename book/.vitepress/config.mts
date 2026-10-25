@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { published } from './course'
+import { published, parts, chapterId } from './course'
 
 const [owner = '', repo = ''] = (process.env.GITHUB_REPOSITORY || '').split('/')
 const inferred = repo && repo.toLowerCase() !== `${owner.toLowerCase()}.github.io` ? `/${repo}/` : '/'
@@ -17,7 +17,10 @@ export default defineConfig({
     nav: [{ text: '学习路线', link: '/curriculum' }, { text: '实战实验室', link: '/labs' }, { text: '阅读与下载', link: '/resources' }],
     sidebar: [
       { text: '从这里开始', items: [{ text: '导读 · 怎样使用这本书', link: '/00-导读' }, { text: '完整课程 · 8 部分 / 28 章', link: '/curriculum' }] },
-      { text: '01 / 认识你的执行搭档', items: published.map(c => ({ text: `${String(c.id).padStart(2, '0')}  ${c.label}`, link: `/${c.file}` })) },
+      ...parts.flatMap((part, index) => {
+        const chapters = published.filter(c => part.chapters.some((_, ci) => chapterId(index, ci) === c.id))
+        return chapters.length ? [{ text: `${String(index + 1).padStart(2, '0')} / ${part.title}`, collapsed: index > 0, items: chapters.map(c => ({ text: `${String(c.id).padStart(2, '0')}  ${c.label}`, link: `/${c.file}` })) }] : []
+      }),
       { text: '动手与查阅', items: [{ text: '实战实验室', link: '/labs' }, { text: '术语与官方来源', link: '/附录-术语与来源' }, { text: '阅读与下载', link: '/resources' }] }
     ],
     socialLinks: [{ icon: 'github', link: 'https://github.com/liamamilin/codex-mastery' }],

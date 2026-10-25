@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "tasks": [
+    { "id": 1, "title": "核对入口命令", "done": false },
+    { "id": 2, "title": "阅读项目说明", "done": true }
+  ]
+}

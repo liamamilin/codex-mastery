@@ -1,0 +1,21 @@
+{
+  "format": "linkshelf",
+  "version": 1,
+  "exportedAt": "2026-10-26T00:00:00Z",
+  "links": [
+    {
+      "id": "backup-example",
+      "title": "示例网站",
+      "url": "https://example.com/",
+      "tags": ["学习", "文档"],
+      "createdAt": "2026-10-26T00:00:00Z"
+    },
+    {
+      "id": "backup-reference",
+      "title": "参考资料",
+      "url": "https://example.org/reference",
+      "tags": ["参考"],
+      "createdAt": "2026-10-26T00:01:00Z"
+    }
+  ]
+}

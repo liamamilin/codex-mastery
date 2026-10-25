@@ -4,7 +4,7 @@
 
 ## 本地运行
 
-安装 Node.js 22 和 npm 后，在仓库根目录执行：
+安装 Node.js 22 和 npm 后，在仓库根目录执行（案例测试另需 Python 3.9+）：
 
 ```sh
 npm ci

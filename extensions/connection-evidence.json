@@ -1,0 +1,12 @@
+{
+  "observed_on": "2026-10-25",
+  "source": "GitHub plugin get_repo read-only call in the book production environment",
+  "request": { "repository_full_name": "liamamilin/codex-mastery" },
+  "observed_fields": {
+    "repository_full_name": "liamamilin/codex-mastery",
+    "default_branch": "main",
+    "visibility": "public",
+    "archived": false
+  },
+  "limits": "A historical observation, not a live API response. It does not prove that a reader has this plugin, authorization, repository contents or deployment access. Reading this file is a local file exercise, not MCP."
+}

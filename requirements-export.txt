@@ -1,0 +1,8 @@
+reportlab>=4.4,<5
+pypdf>=6,<7
+pypdfium2>=4.30,<6
+fonttools>=4.60,<5
+svglib>=1.6,<2
+cssselect2>=0.8,<1
+tinycss2>=1.4,<2
+webencodings>=0.5,<1

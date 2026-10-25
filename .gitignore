@@ -13,3 +13,12 @@ book/public/lab/
 book/public/diagrams/
 book/public/screenshots/
 my-linkshelf*/
+
+__pycache__/
+*.pyc
+tmp/
+.cache/
+book/.vitepress/published.generated.ts
+book/.vitepress/downloads.generated.ts
+book/public/downloads/
+.venv-publishing/

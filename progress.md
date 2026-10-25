@@ -1,48 +1,42 @@
-# Codex Mastery Lab · 当前进度
+# Codex Mastery Lab · 接续状态
 
-更新：2026-10-25，Asia/Shanghai。**第一阶段纵向切片已制作；完整 28 章产品尚未完成。**
+更新：2026-10-26，Asia/Shanghai。**完整首版已制作，最终本地验收通过，正在更新公开部署。**
 
-## 已落盘的成果
+## 已完成
 
-- `book/00-导读.md`，第 1—3 章完整正文，以及 `附录-术语与来源.md`，合计约 9,500 汉字。章节有前提、操作、解释、失败分支、练习和参考反馈。
-- VitePress 1.6.4 + Vue 静态站：品牌首页、8 部分/28 章完整路线、阅读侧栏与提纲、章节跳转、本地全文搜索、代码复制、明暗主题、手机布局。
-- 三种练习：第 1 章证据判断、可探索的七步工作循环、诊断状态模型；另有第 3 章本地验收清单与手动学习进度。
-- `cases/A-linkshelf/`：独立 starter、TASK.md、可运行 solution；新增/列表/刷新保存/指定删除/错误反馈，以及关键词搜索与 JSON 导出。此阶段没有导入。
-- 两幅可编辑教学 SVG、程序化封面 SVG、原创品牌标记、实际案例和网站截图。`assets/` 为原件，构建脚本生成公开资源副本。
-- GitHub Pages 工作流、锁文件、安装开发说明、路径检查脚本与真实验证记录。网站运行不需要后端或付费 API。
+- `book/00-导读.md`、1—28 章、术语来源附录：30 份 Markdown，覆盖 8 部分。完成全书阅读审校，章节、部分、相对链接与实际案例一致；记录在 `artifacts/editorial-review.md`。
+- VitePress + Vue 静态阅读站：首页、完整课程、章节导航/提纲/跳转、中文全文搜索、复制、明暗主题、手机布局、浏览器本地学习进度。课程元数据由正文 frontmatter 生成。
+- 7 类交互：工作循环、证据判断、诊断状态模型、实操清单、目标探索、任务说明工坊、工作路线选择。明确区分教学情境、实际案例与真正 Codex 执行。反馈/重置与草稿保存均有实际浏览器检查。
+- A 基础版与独立增强版；B Python 陌生仓库起点/参考；C CSV 报告和独立校验；D 删除故障/修复；E 两套毕业题。E2 的分段缺陷故意保留，E1 没有提前给完整实现，不能把起点称为已解成果。
+- 封面、7 幅教学 SVG、品牌标记与真实截图。五幅新图有可重建代码，字体 OFL 许可与固定来源入库。
+- PDF/EPUB 导出管线已运行；同一份正文、离线练习替代、字体子集、目录和来源哈希齐备，159 页 PDF 与 EPUB 已完成代表页/图表视觉抽查。下载复制前核对正文/成品 SHA-256。
+- GitHub Pages 免费静态部署工作流已运行成功过；用户已设置 Source=GitHub Actions，后续 main 更新自动发布。
 
-## 真实验证
+## 本轮真实验证
 
-- `npm ci --offline` 从锁文件重新安装成功；最终 `SITE_BASE=/codex-mastery/ npm run build` 成功；11 个 HTML 页面（包括独立案例），225 个本地目标检查通过。最终构建检查结果保存为 `artifacts/build-check.json`。
-- `npm test`：10/10 通过，包含持久化、指定删除、错误协议、坏存储、配额/权限失败、搜索与导出格式。
-- 实际浏览器验证：新增 → 刷新 → 删除 → 刷新，非法网址、搜索、JSON 下载并读回，指定删除不影响另一条。
-- 实际浏览器验证：中文搜索与段落导航、深层章节刷新、图片加载、代码复制、学习记录/验收清单的保存与重置、三个诊断分支、键盘作答、手机目录。
-- 1440px 桌面与 390px 手机断点截图，详见 `assets/README.md`；详细操作和边界见 `artifacts/browser-verification.md`。
-- 官方产品事实按 2026-10-25 文档核对；Codex CLI 0.154.0 的版本/帮助实际查询。没有声称本机重新安装、登录或 Windows 实测完成。
+- 全案例 **44 项**：JavaScript 28，Python 16，通过；输出见 `artifacts/case-tests.txt`。C 增加可见渠道表/质量计数篡改检查，E2 增加输入硬链接保护，保留未覆盖的教学缺陷。
+- 最终重新安装锁定依赖并构建：39 HTML、1909 本地目标检查通过，见 `artifacts/build-check.json`。
+- B/C/E 的实际命令、独立 Git 演练、重复脚本结果和只读 GitHub 返回分别记录于各案例及 `extensions/verification.md`。
+- 实际浏览器：D 起点 2/3 层状态分歧、刷新恢复；修复版删除刷新不回、全删保持空、再新增保持、恢复样本。A 增强版标签+搜索、真实文件导入/重复去重/导出读回/删除后备份恢复/坏协议拒绝。仅操作合成样本。
+- 新练习实际分支/反馈/重置，任务草稿保存后刷新恢复并复制读回；第 28 章进度保存刷新仍在，撤销恢复，目录显示 28 章。
+- 390px 与 1440px 布局检查；暂未发现横向溢出或浏览器控制台错误。更新网站构建后重启预览，解决旧脚本缓存，不能把旧静态按钮当作新交互证据。
 
-## 远端与发布
+## 发布状态
 
-用户已明确授权提交与 GitHub Pages 公开访问。源码已提交到 [liamamilin/codex-mastery](https://github.com/liamamilin/codex-mastery)，主体提交为 `330488fc5bbcea349b2ed0d057d5440d04bddcbb`。终端没有 GitHub 登录，直接 push 失败；改用已授权 GitHub 连接创建同一文件树，核对 tree SHA 与本地一致后，将本地分支对齐并跟踪 origin/main，没有丢失文件。
+公开站点：[Codex Mastery Lab](https://liamamilin.github.io/codex-mastery/)。此前纵向切片已部署验收，基线 commit 为 `8a949ab323d6a01123904d2dcc53b8a62c872f20`；本轮完整首版尚在本地整合，不能以该旧网址当前内容证明新首版已发布。
 
-[Actions 运行 #1](https://github.com/liamamilin/codex-mastery/actions/runs/40206290710) 的 build job 成功：安装、测试、构建、路径检查与产物上传全部通过。deploy job 在 Configure GitHub Pages 失败，明确错误为 Pages 尚未启用 / Source 未设为 GitHub Actions，返回 Not Found。浏览器 GitHub 未登录，连接器无仓库 Pages 设置接口，已请求用户完成一次设置：Settings → Pages → Source → GitHub Actions。用户随后完成设置，重新运行失败 job 后，Configure GitHub Pages 与 Deploy to GitHub Pages 均成功（成功 deploy job `121209138246`）。详见 `artifacts/github-ci.json`。
+终端无 GitHub 登录，公开 fetch 可用；可使用已授权 GitHub 连接创建与本地相同的文件树，核对 tree SHA 后更新 main，再 fetch 并对齐。本轮推送、Actions 与线上验收完成后更新本节，不要求用户重新配置 Pages。
 
-**网站已上线并实际打开验收：[Codex Mastery Lab](https://liamamilin.github.io/codex-mastery/)**。线上已确认首页、中文搜索、深层章节刷新、图解与案例截图加载、学习记录刷新保留、LinkShelf 新增→刷新→指定删除→刷新，以及手机目录与诊断模型反馈。真实线上截图为 `assets/screenshots/site-live.png`。第 4—28 章等未完成范围保持不变，未把首次切片上线视为全书完成。
+## 明确边界
 
-## 尚未完成
+没有重新安装/登录 Codex，未在 Windows、WSL、Linux 桌面、真实手机硬件、Safari/Firefox 或所有账号入口上实际验收。模型/推理资源选择没有虚构付费基准。Skill 模板已验证格式，但未冒充所有客户端自动发现通过。旧连接返回不是实时状态。
 
-- 第 4—28 章、案例 B/C/D/E；完整 8 部分主题视觉随正文扩展。
-- 案例 A2 的标签、A3 导入；现有搜索与导出只是部分后续能力。
-- PDF、EPUB 未生成与验收；网站明确显示待制作，没有伪下载入口。
-- 真实设备、多浏览器和 Windows 安装验收；暂以官方文档与本机有限环境为边界。
+EPUB 的 ZIP/XML/文件链接与完整性检查不等于真实电子阅读器兼容性；PDF 必须以最终渲染抽查记录为准。所有具体限制见 `exports/verification.md`。localStorage 不是永久备份或云同步。
 
-## 下一次直接从这里继续
+## 下一步直接操作
 
-先读本文件与 `AGENTS.md`，运行 `npm ci`、`npm test` 和子路径构建，确认起点；不要重新规划或重写前三章。
+1. 最终本地验收已通过；如果正文或源码再次修改，重新导出并做对应验证。
+2. 检查最终下载、增强版案例、手机目录/阅读导航和新练习，保存最新版截图，补齐 `artifacts/browser-verification.md`。
+3. 提交所有原件、成品和证据到目标 main；观察 build/deploy 成功，真实打开线上新章节与下载，更新本文件发布段。
 
-1. 写 `book/04-模糊意图.md`、`05-完成状态.md`、`06-任务说明.md`，参照 `07A_章节样稿_从模糊想法开始.md` 的深度，围绕现有 LinkShelf 的真实行为组织正文。
-2. 尽快创建独立 `cases/D-phantom-delete/` 的可复现故障与修复对照，再写第 18 章。当前网页诊断仅是教学模型，不能充当案例 D 已运行的证据。
-3. 开放新章节时更新 `book/.vitepress/course.ts` 的 published 数据及 sidebar，移除首页、资源页、导读中的旧数量；学习进度目前限定 1—3，需随开放范围扩展。
-4. 继续 B 陌生仓库、C CSV 汇总、E 独立毕业题，按目录推进；毕业题不提前泄露完整解法。
-5. 全书稳定后从同一套 Markdown 生成 PDF/EPUB；生成并打开验证后再启用下载。
-
-安装、预览、Windows 环境变量与发布命令见 `README.md` 和 `docs/deployment.md`。`book/public/lab`、`diagrams`、`screenshots` 是自动生成目录，原件在 `cases/`、`assets/`，不要双份维护。
+不要重新写规划或重建正文目录。正文只改 `book/*.md`；`book/public/lab`、`diagrams`、`screenshots`、`downloads` 和生成的 TypeScript 元数据均为可重建副本。手工源与续作说明见 README、`docs/deployment.md`、`docs/ebook.md`。

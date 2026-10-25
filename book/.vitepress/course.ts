@@ -8,8 +8,22 @@ export const parts = [
   { title: '扩展与复用 Codex 的能力', subtitle: '按需连接工具，让有效方法留下来', chapters: ['让有价值的方法成为 Skill', 'MCP 与插件，让工具进入工作流', '把重复操作变成脚本与自动化', '模型、推理强度、时间和成本'] },
   { title: '长任务、协作与真正的掌控', subtitle: '从一次完成，走向独立掌控陌生任务', chapters: ['跨会话、跨阶段推进一个项目', '什么时候值得使用多个 Agent', '把一次成功变成下一次更容易成功', '毕业实战——在陌生任务上独立驾驭 Codex'] }
 ]
-export const published = [
-  { id: 1, file: '01-执行搭档', label: 'Codex 不只是聊天窗口', skill: '分辨回答、行动与成果', duration: '25 分钟' },
-  { id: 2, file: '02-工作环境', label: '建立可操作的工作环境', skill: '确认目录、工具与权限', duration: '35 分钟' },
-  { id: 3, file: '03-第一次成果', label: '第一次从指令走到可见成果', skill: '运行、观察并验收 LinkShelf', duration: '50 分钟' }
-]
+import { published, availableCases } from './published.generated'
+export { published, availableCases }
+export const publishedIds = published.map(chapter => chapter.id)
+export const edition = 'v1.0'
+export function chapterId(partIndex: number, index: number) {
+  return parts.slice(0, partIndex).reduce((sum, part) => sum + part.chapters.length, 0) + index + 1
+}
+export function partPublished(partIndex: number) {
+  return parts[partIndex].chapters.filter((_, index) => publishedIds.includes(chapterId(partIndex, index))).length
+}
+export function publishedSummary() {
+  const ranges: number[][] = []
+  for (const id of publishedIds) {
+    const last = ranges[ranges.length - 1]
+    if (last && last[last.length - 1] + 1 === id) last.push(id)
+    else ranges.push([id])
+  }
+  return `第 ${ranges.map(range => range.length === 1 ? range[0] : `${range[0]}—${range[range.length - 1]}`).join('、')} 章`
+}

@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-25T16:30:13.750929+00:00",
+  "sourceFiles": [
+    {
+      "path": "book/00-导读.md",
+      "sha256": "1b2fd58a06e0c7500c5594902fb0380489e6e624a128a4c94d2053aaf501495a"
+    },
+    {
+      "path": "book/01-执行搭档.md",
+      "sha256": "8d75e0992c5c391c69b50114cf7c596b1d7ad772e2aa695dc8ab9b735136d4c1"
+    },
+    {
+      "path": "book/02-工作环境.md",
+      "sha256": "ab27eabe809966e135327e6d4198d014e38509c63b99212b7c34a1fae20790c9"
+    },
+    {
+      "path": "book/03-第一次成果.md",
+      "sha256": "f0eca77219829c62b83ba7eff4dbb4d4e714d108ca103d219cb70cb53d09632e"
+    },
+    {
+      "path": "book/04-模糊意图.md",
+      "sha256": "da8eec3a304d77b4306a6edef1d53edbaa54270a9e7ad6b7a7466af73c386cf3"
+    },
+    {
+      "path": "book/05-完成状态.md",
+      "sha256": "ae2447ecb0d58b1b52b4a6afee1436c0d81196a5e2185bfec2055ee87e162535"
+    },
+    {
+      "path": "book/06-任务说明.md",
+      "sha256": "d94c6e9728ec83109597300cc813cfaea3b5e66192bc9d7c1e1acf72a8ed83aa"
+    },
+    {
+      "path": "book/07-陌生代码.md",
+      "sha256": "6aa3bb791ffd627b7d1d8f0f7fc613ffe4102e7a830d9fdfdaf01728c7ff4a50"
+    },
+    {
+      "path": "book/08-有效上下文.md",
+      "sha256": "b81187f36f4fef0838c7796a5c9ca40b1f0c442a5f5f6f643411ce0c7286c570"
+    },
+    {
+      "path": "book/09-项目约定与接续.md",
+      "sha256": "9905942d7914441f85dd6d4cbdf9ace465f6bce7f421bb91487499e7742ba304"
+    },
+    {
+      "path": "book/10-选择路线.md",
+      "sha256": "c36cf2fa9c0649aeac766081688212b7525f5a6954e00f2a73ee3a318b5ae6c1"
+    },
+    {
+      "path": "book/11-最小实验.md",
+      "sha256": "945f06473e325b03bfc520320ed68c39e014863e6cf84ea005cf6a21c7b0fafc"
+    },
+    {
+      "path": "book/12-里程碑.md",
+      "sha256": "91a18feffb607c961e6451052d3b924853b46c6c3088fbba624cdc5d5a576c4d"
+    },
+    {
+      "path": "book/13-途中介入.md",
+      "sha256": "ff75ff40fe9d15880474ede44ffa6a5f2827e9ba618281e4e5334593863f93f0"
+    },
+    {
+      "path": "book/14-版本与回退.md",
+      "sha256": "f568f87036588b5d03e7b56526fc5447b9ef51828bdeecfe325592f72348465d"
+    },
+    {
+      "path": "book/15-行为验证.md",
+      "sha256": "7b9a67872964a588d8ae1803d737716b9154f09756d9275b7fe5307e9216d744"
+    },
+    {
+      "path": "book/16-审查与交付.md",
+      "sha256": "0331bcd5c93614f2dd51adbe9fecf4f6998a187457764c59a9519cc386d69ad6"
+    },
+    {
+      "path": "book/17-错误层次.md",
+      "sha256": "e886a9515ab22c0a6ea7a01c0f4ccb4988e64b5f754ead770d8e03cf3dcdabda"
+    },
+    {
+      "path": "book/18-停止无效修补.md",
+      "sha256": "82eb2dcce856aecb7c0b570ecdd234a676489299043972c5b5725a7e077196c7"
+    },
+    {
+      "path": "book/19-路线调整.md",
+      "sha256": "6596505aa86a3dc0f57b0b7a3675f69949d7a35577dae8f0ac583d44323df8dd"
+    },
+    {
+      "path": "book/20-交付证据.md",
+      "sha256": "0b69d1570f32b85def42a08fc4209890e0f69e0ab0f5eb711a20a3c3cbfd2366"
+    },
+    {
+      "path": "book/21-可复用Skill.md",
+      "sha256": "63ba95c7d456c1bfd2e197570dfd8cc301cb01ea848d54510c1bd4a5f15e22c9"
+    },
+    {
+      "path": "book/22-MCP与插件.md",
+      "sha256": "1bfa85c212c081fc9d3cf2aa679ba92a67f283b67f5fbaf34b895d01b568c12f"
+    },
+    {
+      "path": "book/23-脚本与自动化.md",
+      "sha256": "6b2315bb49fa0f5002f2cc840b5f11d669d961f6b852106c8cacd99f6c3b01ce"
+    },
+    {
+      "path": "book/24-资源选择.md",
+      "sha256": "479b68c0dd08818fe408d628a44c71db5a7a9c3fc28d0471b47061c901c9a724"
+    },
+    {
+      "path": "book/25-长期项目.md",
+      "sha256": "e50706ed4a6c06774b894e7bc52f0d8e4039b80c84e92049ca134d0b90aa06e8"
+    },
+    {
+      "path": "book/26-多个Agent.md",
+      "sha256": "d9483910787408300fcc36c3202364df6f9d60bf10a3247c512c8ac6aa60e436"
+    },
+    {
+      "path": "book/27-个人工作手册.md",
+      "sha256": "8f1f87f157c82009aad6cd368f915a6e6189f8d75ba989a990e883f147482737"
+    },
+    {
+      "path": "book/28-毕业实战.md",
+      "sha256": "7bd5a6a1b457cb54828d43dce9c78a25f390ec1f7b1f455a702f868c3528621a"
+    },
+    {
+      "path": "book/附录-术语与来源.md",
+      "sha256": "58ee70da88808cdd608e361be725582d27a90020268778b2174f743ba925b27d"
+    }
+  ],
+  "artifacts": {
+    "codex-mastery.pdf": {
+      "sha256": "4264d1847b31ea494484926f77dab0815de0e5c18146de5890ef27dcde191b3c",
+      "size": 1001115,
+      "pages": 159
+    },
+    "codex-mastery.epub": {
+      "sha256": "00857c425851a3ef9b6da71a81c9f5ade6a51d7d017ae5f4d9700337878bb202",
+      "size": 1753816
+    }
+  },
+  "validation": {
+    "pdfPages": 159,
+    "pdfExtractedCharacters": 106808,
+    "chapters": 28,
+    "sourceDocuments": 30,
+    "missingHeadings": [],
+    "pdfChapterBodies": [
+      {
+        "file": "00-导读.md",
+        "firstPage": 5,
+        "lastPage": 8,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "01-执行搭档.md",
+        "firstPage": 9,
+        "lastPage": 14,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "02-工作环境.md",
+        "firstPage": 15,
+        "lastPage": 20,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "03-第一次成果.md",
+        "firstPage": 21,
+        "lastPage": 28,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "04-模糊意图.md",
+        "firstPage": 29,
+        "lastPage": 35,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "05-完成状态.md",
+        "firstPage": 36,
+        "lastPage": 40,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "06-任务说明.md",
+        "firstPage": 41,
+        "lastPage": 45,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "07-陌生代码.md",
+        "firstPage": 46,
+        "lastPage": 50,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "08-有效上下文.md",
+        "firstPage": 51,
+        "lastPage": 54,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "09-项目约定与接续.md",
+        "firstPage": 55,
+        "lastPage": 60,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "10-选择路线.md",
+        "firstPage": 61,
+        "lastPage": 65,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "11-最小实验.md",
+        "firstPage": 66,
+        "lastPage": 70,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "12-里程碑.md",
+        "firstPage": 71,
+        "lastPage": 74,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "13-途中介入.md",
+        "firstPage": 75,
+        "lastPage": 79,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "14-版本与回退.md",
+        "firstPage": 80,
+        "lastPage": 85,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "15-行为验证.md",
+        "firstPage": 86,
+        "lastPage": 89,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "16-审查与交付.md",
+        "firstPage": 90,
+        "lastPage": 93,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "17-错误层次.md",
+        "firstPage": 94,
+        "lastPage": 98,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "18-停止无效修补.md",
+        "firstPage": 99,
+        "lastPage": 105,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "19-路线调整.md",
+        "firstPage": 106,
+        "lastPage": 110,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "20-交付证据.md",
+        "firstPage": 111,
+        "lastPage": 115,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "21-可复用Skill.md",
+        "firstPage": 116,
+        "lastPage": 119,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "22-MCP与插件.md",
+        "firstPage": 120,
+        "lastPage": 124,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "23-脚本与自动化.md",
+        "firstPage": 125,
+        "lastPage": 128,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "24-资源选择.md",
+        "firstPage": 129,
+        "lastPage": 132,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "25-长期项目.md",
+        "firstPage": 133,
+        "lastPage": 138,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "26-多个Agent.md",
+        "firstPage": 139,
+        "lastPage": 142,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "27-个人工作手册.md",
+        "firstPage": 143,
+        "lastPage": 147,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "28-毕业实战.md",
+        "firstPage": 148,
+        "lastPage": 151,
+        "bodyBoundaryText": "passed"
+      },
+      {
+        "file": "附录-术语与来源.md",
+        "firstPage": 152,
+        "lastPage": 159,
+        "bodyBoundaryText": "passed"
+      }
+    ],
+    "epubEntries": 58,
+    "epubXmlAndLocalLinks": "passed",
+    "epubImageMimeSignatures": "passed",
+    "date": "2026-10-26",
+    "limits": [
+      "EPUB structure/XML/local links checked; no physical e-reader or EPUBCheck executed.",
+      "PDF layout requires rendered page inspection; PDF text extraction alone is insufficient.",
+      "Browser interactions are replaced with explicitly labelled offline exercises."
+    ],
+    "pdfCharacterBounds": {
+      "checked": 109867,
+      "outsidePage": 0
+    },
+    "visualReview": {
+      "representativePages": [
+        1,
+        3,
+        5,
+        12,
+        24,
+        101,
+        152
+      ],
+      "newSvgDiagramsReviewed": 5,
+      "result": "passed",
+      "scope": "Representative rendered pages and all five new teaching diagrams; not a visual review of every page."
+    }
+  }
+}

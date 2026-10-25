@@ -5,7 +5,7 @@ description: 教材正文、实战案例和可编辑图解的来源，以及电�
 
 # 阅读与下载
 
-当前版本是 **v0.1 · 第一阶段纵向切片**，开放导读与第 1—3 章。完整课程规划为 8 部分、28 章；其余正文逐步制作，尚未作为完整书籍出版。
+当前为 **v1.0 · 完整首版**：导读、8 个部分的 28 章、术语附录与五类案例。按顺序走完课程，也可以带着一个具体问题回到对应章节。
 
 ## 在线阅读
 
@@ -22,11 +22,13 @@ description: 教材正文、实战案例和可编辑图解的来源，以及电�
 - [查看安装、开发与验证说明](https://github.com/liamamilin/codex-mastery#readme)
 - [查看官方资料与术语](./附录-术语与来源.md)
 
-## 电子书制作状态
+## 电子书
 
-<div class="publication-status"><span class="eyebrow">PUBLICATION / IN PROGRESS</span><h3>把完整的书，带到离线世界。</h3><p>PDF 与 EPUB 将从同一份 Markdown 正文生成。当前尚未生成和验收，下载入口将在文件真实可用后开放。</p><span class="status-label">PDF · 待制作</span> <span class="status-label">EPUB · 待制作</span></div>
+<DownloadShelf />
 
-当前没有电子书下载按钮。浏览器“打印 → 保存为 PDF”可临时保存单章，但不等同于已经完成排版与验收的完整电子书。
+PDF 适合固定版式阅读与打印；EPUB 适合在阅读器中调整字号。案例终端命令可以从正文复制，真正运行仍需要章节说明的本机环境。电子书不调用 Codex，也不包含你的浏览器学习记录。
+
+[重新生成与验证电子书的方法](https://github.com/liamamilin/codex-mastery/blob/main/docs/ebook.md) · [字体来源与许可](https://github.com/liamamilin/codex-mastery/tree/main/assets/fonts)
 
 ## 关于本项目
 
